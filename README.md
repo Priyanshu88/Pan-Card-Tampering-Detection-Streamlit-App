@@ -4,6 +4,7 @@
   <h1>Pan Card Tampering Detection Streamlit App</h1>
 
   <p>
+  This is a Streamlit app that allows users to upload an image of a PAN card and detect if there has been any tampering. The app also calculates the structural similarity index (SSIM) between the uploaded image and a reference image to validate the ID.
   </p>
 
 <!-- Badges -->
@@ -34,12 +35,10 @@
 
 ## :notebook_with_decorative_cover: Table of Contents
 
-- [Dataset](#signal_strength-dataset)
+- [Image](#signal_strength-image)
 - [Dependencies](#toolbox-dependecies)
 - [Installation](#gear-installation)
 - [Usage](#play_or_pause_button-usage)
-- [Inputs](#construction-inputs)
-- [Outputs](#rocket-outputs)
 - [Deployment and Notebook](#triangular_flag_on_post-deployment-and-notebook)
 - [License](#balance_scale-license)
 - [Contact](#handshake-contact)
@@ -48,43 +47,27 @@
 
 ## :signal_strength: Dataset
 
-The trained dataset is originally from the National Institute of Diabetes and Digestive and Kidney Diseases. The objective is to predict based on diagnostic measurements whether a patient has diabetes. Several constraints were placed on the selection of these instances from a larger database. In particular, all patients here are females at least 21 years old of Pima Indian heritage. The dataset can be found on [`Kaggle`](https://www.kaggle.com/datasets/mathchi/diabetes-data-set). It includes following health criteria:
+This project has a wide dataset scope but for the reference of example we have worked on Permanant Account Number issued for indians to verify their identity. The reference image looks like below:
 
-- Pregnancies: Number of times pregnant
-- Glucose: Plasma glucose concentration a 2 hours in an oral glucose tolerance test
-- BloodPressure: Diastolic blood pressure (mm Hg)
-- SkinThickness: Triceps skin fold thickness (mm)
-- Insulin: 2-Hour serum insulin (mu U/ml)
-- BMI: Body mass index (weight in kg/(height in m)^2)
-- DiabetesPedigreeFunction: Diabetes pedigree function
-- Age: Age (years)
-- Outcome: Class variable (0 or 1)
-
-### Details
-- Number of Instances: 768
-- Number of Attributes: 8 plus class
-- Missing Attribute Values: Yes
-- Class Distribution: (class value 1 is interpreted as "tested positive for diabetes")
-
+<div align='center'>
+<img  src='https://user-images.githubusercontent.com/86107841/236691772-cefaee43-31fc-4f72-85b9-7d9611be3971.png'/>
+</div>
 
 
 ## :toolbox: Dependecies
 
+
 `streamlit`
 
-`pickle4`
+`numpy` 
 
-`numpy==1.20.2`
+`scikit-image==0.18.3`
 
-`seaborn==0.11.1`
+`imutils==0.5.4`
 
-`scikit-learn>=0.18`
+`opencv-python-headless`
 
-`matplotlib==3.4.1`
-
-`pandas==1.2.4`
-
-`plotly>=5.0.0`
+`Pillow==8.3.1`
 
 
 
@@ -93,11 +76,11 @@ The trained dataset is originally from the National Institute of Diabetes and Di
 Clone the repository and install the required dependencies using the following commands:
 
 ```bash
-git clone https://github.com/Priyanshu88/Diabetes-Prediction-Streamlit-App.git
+git clone https://github.com/Priyanshu88/Pan-Card-Tampering-Detection-Streamlit-App.git
 ```
 
 ```bash
-cd Diabetes-Prediction-Streamlit-App
+cd Pan-Card-Tampering-Detection-Streamlit-App
 ```
 
 ```bash
@@ -110,45 +93,25 @@ streamlit run app.py
 
 ## :play_or_pause_button: Usage
 
-1. Open the app in your web browser.
-2. Enter the required information in the input fields.
-3. Click the 'Predict' button to generate the prediction.
-
-
-
-## :construction: Inputs
-Click on the link and reboot the tool or run locally and enter your:
-
-* Name: Name of the patient
-* Pregnancies: Number of times pregnant
-* Glucose: Plasma glucose concentration a 2 hours in an oral glucose tolerance test
-* Blood Pressure: Diastolic blood pressure (mm Hg)
-* Skin Thickness: Triceps skin fold thickness (mm)
-* Insulin: 2-Hour serum insulin (mu U/ml)
-* BMI: Body mass index (weight in kg/(height in m)^2)
-* Diabetes Pedigree Function: Diabetes pedigree function
-* Age: Age (years)
-
-
-
-## :rocket: Outputs
-The app will display one of the following messages:
-
-* "Congratulations! [Name], you are not diabetic."
-* "[Name], we are really sorry to say but it seems like you are Diabetic. But don't lose hope, we have suggestions for you." along with a link to the Mayo Clinic's Diabetes Prevention page.
+1. Open the app in your web browser through the provided link.
+2. Click on the "Choose an image file" button to upload an image of a PAN card.
+3. The app will process the image and display the original and processed image side by side.
+4. If any tampering is detected, the app will highlight the tampered area in red.
+5. The app will display a message indicating whether tampering was detected or not.
+6. The app will also display the structural similarity index (SSIM) between the uploaded image and the reference image.
 
 
 
 
 ## :triangular_flag_on_post: Deployment and Notebook
 
-This tool has been deployed using [`Streamlit`](https://streamlit.io/). Learn about streamlit deployment [`here`](https://docs.streamlit.io/streamlit-community-cloud/get-started/deploy-an-app). Checkout the notebook repository [`here`](https://github.com/Priyanshu88/Diabestes-Prediction-Streamlit-App) from where the pickle file has been imployed in the tool.
+This tool has been deployed using [`Streamlit`](https://streamlit.io/). Learn about streamlit deployment [`here`](https://docs.streamlit.io/streamlit-community-cloud/get-started/deploy-an-app). Checkout the notebook repository [`here`](https://github.com/Priyanshu88/Pan-Card-Tampering-Detection).
 
 
 
 ## :balance_scale: License
 
-This project is licensed under the MIT License - see the [LICENSE](https://github.com/Priyanshu88/Diabetes-Prediction-Streamlit-App/blob/main/LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/Priyanshu88/Pan-Card-Tampering-Detection-Streamlit-App/blob/main/LICENSE) file for details.
 
 
 
@@ -158,7 +121,7 @@ This project is licensed under the MIT License - see the [LICENSE](https://githu
 
 Your Name - [@twitter_handle](https://twitter.com/Priyans75729802?s=09) - 2040020@sliet.ac.in
 
-Project Link: [https://github.com/Priyanshu88/Diabetes-Prediction-Streamlit-App.git](https://github.com/Priyanshu88/Diabetes-Prediction-Streamlit-App.git)
+Project Link: [https://github.com/Priyanshu88/Pan-Card-Tampering-Detection-Streamlit-App.git](https://github.com/Priyanshu88/Pan-Card-Tampering-Detection-Streamlit-App.git)
 <hr />
 <br />
 <div align="center">Don't forget to leave a star ⭐️</div>
